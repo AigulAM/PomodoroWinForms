@@ -11,6 +11,7 @@ namespace PomodorWinForm
         {
             InitializeComponent();
             RemainingTimeTextBox.Text = "Нажмите Старт, для запуска";
+            time = new CustomTime();
         }
 
         private void timer_Tick(object sender, EventArgs e)
@@ -23,7 +24,7 @@ namespace PomodorWinForm
         {
             timer.Enabled = true;
             timer.Tick += timer_Tick;
-            time = new CustomTime(Convert.ToInt32(WorkPeriodNumericUpDown.Value), Convert.ToInt32(BreakPeriodNumericUpDown.Value));
+            
             time.StartTime();
         }
 
@@ -32,6 +33,14 @@ namespace PomodorWinForm
             timer.Enabled = false;
             RemainingTimeTextBox.Text = "Вы остановили программу";
 
+        }
+
+        private void SettingsButton_Click(object sender, EventArgs e)
+        {
+            Settings formSettings = new Settings(time);
+            formSettings.ShowDialog();
+
+               
         }
     }
 }

@@ -9,20 +9,32 @@ namespace PomodorWinForm
         private DateTime _time;
         private int _workPeriod;
         private int _breakPeriod;
-        private Color _timeColor;
-        public CustomTime(int workPeriod, int breakPeriod)
+        private DateTime _timeStart;
+        private bool timeChange = false;
+
+        public int BreakPeriod
         {
-            _workPeriod = workPeriod;
-            _breakPeriod = breakPeriod;
+            get
+            { return _breakPeriod; }
+            set
+            { _breakPeriod = value; }
         }
+
+        public int WorkPeriod
+        {
+            get
+            { return _workPeriod; }
+            set
+            { _workPeriod = value; }
+        }
+
         public override string ToString()
         {
             var result = _time.ToString("HH:mm:ss");
 
             return result;
         }
-        private DateTime _timeStart;
-        private bool timeChange = false;
+
 
         private void CompateTimes(int period)
         {
