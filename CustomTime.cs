@@ -18,8 +18,8 @@ namespace PomodorWinForm
         public override string ToString()
         {
             var result = _time.ToString("HH:mm:ss");
-            
-            return base.ToString();
+
+            return result;
         }
         private DateTime _timeStart;
         private bool timeChange = false;
