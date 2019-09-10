@@ -10,6 +10,8 @@ namespace PomodorWinForm
         {
             InitializeComponent();
             _time = time;
+            BreakPeriodNumericUpDown.Value = _time.BreakPeriod;
+            WorkPeriodNumericUpDown.Value = _time.WorkPeriod;
         }
 
         private void SetChangesButton_Click(object sender, EventArgs e)
